@@ -15,30 +15,30 @@ Because there are many units, we convert them to the same unit as "Triệu/thán
 #### For total_site_area:
 We only remove the unit of area because they all have the same unit. 
 #### For property_name:
-We have 5 types of property_name, which are: "cho thuê văn phòng" or "Cho thuê văn phòng", "Cho thuê cửa hàng, ki ốt", "Nhà riêng", "Căn hộ", "Đất nền".
+We have 5 types of property_name, which are: "cho thuê văn phòng" or "Cho thuê văn phòng", "Cho thuê cửa hàng, ki ốt", "Nhà riêng", "Căn hộ", "Đất nền". <br/>
 So we label them as number from 0 to 4.
 #### For number_of_bedrooms:
 There are not many things to do with these numbers except converting to float number and removing outliers on number_of_bedrooms.
 
 #### For district + city:
-There are many words that refer to the same place, so we fixed them to be the same.
-After that, we concat district and city into 1 word is location.
+There are many words that refer to the same place, so we fixed them to be the same.<br/>
+After that, we concat district and city into 1 word is location. 
 ![image](https://user-images.githubusercontent.com/67094879/140051674-f4ff6334-1d4d-4865-884b-4f3e5d23b617.png)
 Next, we move those locations that have small replication that <= 10 into the same location named "other".
 
 Because the data type is still a string, so we use **One-Hot Encoding** to convert data into number.
 ![image](https://user-images.githubusercontent.com/67094879/140052372-c732c148-e7fb-4cbf-9e5e-b86d30a05dc2.png)
 ### Step 5: Train data
-Before training, we will split our dataset into training set and test set
-![image](https://user-images.githubusercontent.com/67094879/140052525-5faaf928-5452-4b62-9dae-ab662b40dd3a.png)
-Then we train and evaluate each model applied using **K-fold cross validation**.
-And our model we use are **LinearRegression**, **Lasso** and **DecisionTreeRegressor**
+Before training, we will split our dataset into training set and test set<br/>
+![image](https://user-images.githubusercontent.com/67094879/140052525-5faaf928-5452-4b62-9dae-ab662b40dd3a.png)<br/>
+Then we train and evaluate each model applied using **K-fold cross validation**.<br/>
+And our model we use are **LinearRegression**, **Lasso** and **DecisionTreeRegressor**<br/>
 ![image](https://user-images.githubusercontent.com/67094879/140053156-f428a0be-8081-4f93-9bf8-cc18ff32009f.png)
-
+<br/>
 As we can see in the picture above, the result is very bad, so we will try to figure out the solution in the next update.
 
 ### Step 6: Our model is ready to use
-Let's try to predict the rent price with this formate: **predict_price(location,total_site_area,property_name,number_of_bedrooms)**
+Let's try to predict the rent price with this formate: **predict_price(location,total_site_area,property_name,number_of_bedrooms)**<br/>
 ![image](https://user-images.githubusercontent.com/67094879/140053470-c5e139c9-edf2-4b90-8e1c-bc9f3a934322.png)
 
 
