@@ -7,7 +7,7 @@ I will briefly summarize steps we do in file [AnhTamtask1.ipynb](https://github.
 ### Step 2: Select features
 Features we gonna use are 'total_site_area', 'property_name', 'number_of_bedrooms', 'city', 'district', 'price_unit'
 ### Step 3: Clean NULL data
-In this step, we delete rows that have "NA" value or white space like this ' ' 
+In this step, we delete rows that have "NA" value or white space.
 ### Step 4: Preprocessing price_unit, total_site_area, property_name, number_of_bedrooms and location(district + city)
 #### For price_unit:
 Because there are many units, we convert them to the same unit as "Triệu/tháng" but not to keep it.
@@ -31,6 +31,15 @@ Because the data type is still a string, so we use **One-Hot Encoding** to conve
 ### Step 5: Train data
 Before training, we will split our dataset into training set and test set
 ![image](https://user-images.githubusercontent.com/67094879/140052525-5faaf928-5452-4b62-9dae-ab662b40dd3a.png)
+Then we train and evaluate each model applied using **K-fold cross validation**.
+And our model we use are **LinearRegression**, **Lasso** and **DecisionTreeRegressor**
+![image](https://user-images.githubusercontent.com/67094879/140053156-f428a0be-8081-4f93-9bf8-cc18ff32009f.png)
+
+As we can see in the picture above, the result is very bad, so we will try to figure out the solution in the next update.
+
+### Step 6: Our model is ready to use
+Let's try to predict the rent price with this formate: **predict_price(location,total_site_area,property_name,number_of_bedrooms)**
+![image](https://user-images.githubusercontent.com/67094879/140053470-c5e139c9-edf2-4b90-8e1c-bc9f3a934322.png)
 
 
 ## Task 2: Labeling image
