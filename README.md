@@ -1,5 +1,8 @@
 # Predict house price
-In this project, we are looking to clean raw data, assign a price to each photo folder containing house prices, and classify the images. Then apply the model to predict house prices.
+Trong dự án này, nhóm đang tìm cách làm sạch dữ liệu thô, gán giá cho mỗi thư mục ảnh chứa giá nhà và phân loại ảnh. Sau đó áp dụng mô hình để dự đoán giá nhà.
+## Task 1: Clean data and perform some simple estimation
+Công việc cho task này bao gồm việc chuyển đổi các giá trị ví dụ ở price_unit thành chung 1 đơn vị, dọn các cột có "Thỏa thuận" . . . plot các diagrams
+Sử dụng các thuật toán như Linear Regression, Lasso, Regression Tree lên dataset mới tạo ra. Xem xét về tính đúng đắn trước việc thực hiện với dùng thêm dataset là ảnh.
 ## Task 2: Labeling image
 Công việc label lại các file hình ảnh được làm local trên máy tính thông qua một đoạn code. Từ việc preprocess, nhóm xuất được 1 file csv chứa property_code và price_unit liên quan tới ảnh. <br/>
 directory là đường dẫn chứa thư mục có các folder mà tên mỗi folder là property_code.<br/>
